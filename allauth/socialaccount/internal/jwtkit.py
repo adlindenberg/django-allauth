@@ -61,6 +61,11 @@ def fetch_key(credential, keys_url, lookup):
 def verify_and_decode(
     *, credential, keys_url, issuer, audience, lookup_kid, verify_signature=True
 ):
+    print("verify_and_decode")
+    print("credential", credential)
+    print("keys_url", keys_url)
+    print("issuer", issuer)
+    print("audience", audience)
     try:
         if verify_signature:
             alg, key = fetch_key(credential, keys_url, lookup_kid)
