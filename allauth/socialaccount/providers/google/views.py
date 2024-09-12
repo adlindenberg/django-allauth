@@ -112,6 +112,8 @@ class GoogleOAuth2Adapter(OAuth2Adapter):
                 headers={"Authorization": "Bearer {}".format(access_token)},
             )
         )
+        print("response is ")
+        print(resp.json())
         if not resp.ok:
             raise OAuth2Error("Request to user info failed")
         return resp.json()
